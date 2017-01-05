@@ -82,9 +82,9 @@ public class DaemonService extends Service {
         //简单守护开机广播
         getPackageManager().setComponentEnabledSetting(
                 new ComponentName(getPackageName(), DaemonService.class.getName()),
-                PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                 PackageManager.DONT_KILL_APP);
-        return START_STICKY;
+        return super.onStartCommand(intent, flags, startId);
     }
 
     @Override

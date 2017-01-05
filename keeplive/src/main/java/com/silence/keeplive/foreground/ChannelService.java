@@ -26,7 +26,7 @@ public class ChannelService extends Service {
         startForeground(DaemonService.SERVICE_ID, new Notification());
         stopForeground(true);
         stopSelf();
-        return START_STICKY;
+        return super.onStartCommand(intent, flags, startId);
     }
 
     public void onDestroy() {
