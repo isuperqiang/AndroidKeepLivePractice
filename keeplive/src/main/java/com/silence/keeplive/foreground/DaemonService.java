@@ -60,7 +60,7 @@ public class DaemonService extends Service {
                 jobScheduler.cancelAll();
                 JobInfo.Builder builder = new JobInfo.Builder(1024, new ComponentName(getPackageName(), ScheduleService.class.getName()));
                 builder.setPeriodic(WAKE_INTERVAL);
-//                builder.setPersisted(true);
+                builder.setPersisted(true);
                 builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
                 int schedule = jobScheduler.schedule(builder.build());
                 if (schedule <= 0) {
@@ -70,8 +70,8 @@ public class DaemonService extends Service {
                 //Android 4.4- 使用 AlarmManager
                 Log.i(TAG, "开启 AlarmManager 定时");
                 AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-                Intent i = new Intent(getApplication(), DaemonService.class);
-                PendingIntent pendingIntent = PendingIntent.getService(this, 1024, i, PendingIntent.FLAG_UPDATE_CURRENT);
+                Intent alarmIntent = new Intent(getApplication(), DaemonService.class);
+                PendingIntent pendingIntent = PendingIntent.getService(this, 1024, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 am.cancel(pendingIntent);
                 am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + WAKE_INTERVAL, WAKE_INTERVAL, pendingIntent);
             }
