@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startService(new Intent(this, DaemonService.class));
-        Log.d("LauncherActivity", "onCreate(): savedInstanceState = [" + savedInstanceState + "]");
+        startService(new Intent(getApplicationContext(), DaemonService.class));
+        Log.d("MainActivity", "onCreate(): savedInstanceState = [" + savedInstanceState + "]");
         finish();
     }
 }

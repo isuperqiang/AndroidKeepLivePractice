@@ -16,7 +16,7 @@ public class ScheduleService extends JobService {
     @Override
     public boolean onStartJob(JobParameters params) {
         Log.d(TAG, "onStartJob(): params = [" + params + "]");
-        Intent intent = new Intent(this, DaemonService.class);
+        Intent intent = new Intent(getApplicationContext(), DaemonService.class);
         startService(intent);
         jobFinished(params, false);
         return false;
