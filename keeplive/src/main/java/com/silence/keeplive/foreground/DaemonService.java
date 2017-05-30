@@ -40,17 +40,18 @@ public class DaemonService extends Service {
         intentFilter.addAction("android.intent.action.SCREEN_ON");
         intentFilter.addAction("android.intent.action.USER_PRESENT");
         registerReceiver(receiver, intentFilter);
-    }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand(): intent = [" + intent.toUri(0) + "], flags = [" + flags + "], startId = [" + startId + "]");
         // 开启前台服务
         startForeground(SERVICE_ID, new Notification());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
             Intent sendIntend = new Intent(getApplicationContext(), ChannelService.class);
             startService(sendIntend);
         }
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(TAG, "onStartCommand(): intent = [" + intent.toUri(0) + "], flags = [" + flags + "], startId = [" + startId + "]");
 
         try {
             // 定时检查 WorkService 是否在运行，如果不在运行就把它拉起来
