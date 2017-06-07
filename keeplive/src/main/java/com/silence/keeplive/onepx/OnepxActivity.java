@@ -77,7 +77,7 @@ public class OnePxActivity extends Activity {
                 return powerManager.isScreenOn();
             }
         } catch (Exception e) {
-            Log.e(TAG, "e:" + e);
+            Log.e(TAG, "e:", e);
         }
         return false;
     }

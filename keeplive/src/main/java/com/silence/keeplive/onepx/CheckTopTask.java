@@ -10,21 +10,21 @@ import java.util.List;
 /**
  * Created by Silence on 2016.12.31
  */
-public class CheckTopTask implements Runnable {
+class CheckTopTask implements Runnable {
     private static final String TAG = "CheckTopTask";
     private Context context;
 
-    public CheckTopTask(Context context) {
+    CheckTopTask(Context context) {
         this.context = context;
     }
 
-    public static void startForeground(Context context) {
+    static void startForeground(Context context) {
         try {
             Intent intent = new Intent(context, OnePxActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } catch (Exception e) {
-            Log.e(TAG, "e:" + e);
+            Log.e(TAG, "e:", e);
         }
     }
 
@@ -50,7 +50,7 @@ public class CheckTopTask implements Runnable {
                 }
             }
         } catch (Exception e) {
-            Log.e(TAG, "e:" + e);
+            Log.e(TAG, "e:", e);
         }
         return false;
     }

@@ -33,7 +33,7 @@ public class ScreenReceiver extends BroadcastReceiver {
                 mHandler.removeCallbacks(mCheckTopTask);
             }
         } catch (Exception e) {
-            Log.e(TAG, "e:" + e);
+            Log.e(TAG, "e:", e);
         }
     }
 }

@@ -78,7 +78,7 @@ public class DaemonService extends Service {
                 am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + WAKE_INTERVAL, WAKE_INTERVAL, pendingIntent);
             }
         } catch (Exception e) {
-            Log.e(TAG, "e:" + e);
+            Log.e(TAG, "e:", e);
         }
         // 简单守护开机广播
         getPackageManager().setComponentEnabledSetting(
