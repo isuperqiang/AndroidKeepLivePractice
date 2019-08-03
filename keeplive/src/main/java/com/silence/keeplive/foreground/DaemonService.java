@@ -17,7 +17,7 @@ import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.Log;
 
-import com.silence.keeplive.onepx.ScreenReceiver;
+import com.silence.keeplive.onepxaty.ScreenReceiver;
 import com.silence.keeplive.timer.ScheduleService;
 
 public class DaemonService extends Service {

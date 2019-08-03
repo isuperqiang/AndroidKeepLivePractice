@@ -27,7 +27,7 @@
         </activity>
 
         <activity
-            android:name="com.silence.keeplive.onepx.OnePxActivity"
+            android:name="com.silence.keeplive.onepxaty.OnePxActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -80,7 +80,7 @@
         </receiver>
 
         <receiver
-            android:name="com.silence.keeplive.onepx.ScreenReceiver"
+            android:name="com.silence.keeplive.onepxaty.ScreenReceiver"
             android:enabled="true"
             android:exported="true"
             android:process=":main">

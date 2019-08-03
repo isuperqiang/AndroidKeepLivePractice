@@ -1,4 +1,4 @@
-package com.silence.keeplive.onepx;
+package com.silence.keeplive.onepxaty;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
