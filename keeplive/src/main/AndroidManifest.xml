@@ -12,16 +12,16 @@
 
     <application
         android:name="com.silence.keeplive.LiveApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
+        android:resizeableActivity="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@android:style/Theme.Translucent">
 
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
